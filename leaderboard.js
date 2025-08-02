@@ -22,17 +22,18 @@ measurementId: "G-SB25Z7DSPJ"
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 var db = getDatabase(app);
-console.log("hi")
-var votes = {
-    'Minecraft' : 2,
-    'Terraria' : 3,
-    'COD': 7,
-};
+console.log("hi");
+var votes = [
+  { name: "Minecraft", votes: 2 },
+  { name: "Terraria", votes: 3 },
+  { name: "COD", votes: 7 }
+];
 
-function createLeaderboard(){
-    votes.sort((a,b), b-a)
-    print(votes)
-}
-createLeaderboard()
+players.sort((a, b) => b.votes - a.votes);
+
+
+createLeaderboard();
+console.clear();
+console.log(votes);
 set(ref(db, 'totalVotes'), votes);
    
