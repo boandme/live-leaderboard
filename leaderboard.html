@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Global Video Game Leaderboard</title>
+        <link rel="stylesheet" href="leaderboard.css">
+    </head>
     <body>
-        <h1> Live VG Leaderboard </h1>
+        <h1> Global Video Game Leaderboard </h1>
         
-        <script  type = "module" src = 'leaderboard.js'></script>
-            
-       
-
-        <link rel = 'stylesheet' href = 'leaderboard.css'>
         <div id = 'lboard'>
             <h3> All Time Leaderboard </h3>
             <ul id = 'leaderboard'>
 
             </ul>
         </div>
+        <button id = 'voteBtn'> Vote</button>
+        <div id = 'modal'>
+            <div id="modal-content">
 
+
+                <h2> Voting </h2>
+
+                <div class="vote-pair" data-pair="1">
+                        <button id = "choice-1" class = "vote-choice"  onclick = "selectChoice(this)"> Game A </button>
+                        <button id = "choice-2" class = "vote-choice" onclick = "selectChoice(this)">Game B</button>
+                    
+                </div>
+                <button id = 'submitVote' onclick = > Submit Votes </button>
+            </div>
+        </div>
+       
+        <script  type = "module" src = 'leaderboard.js'></script>
     </body>
 </html>
