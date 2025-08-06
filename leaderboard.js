@@ -78,7 +78,7 @@ function updateScreen(){
   
 
 
-
+console.log(randomGames)
   // Physically update the vote options on the HTML
   document.getElementById("choice-1").innerHTML = randomGames[0].name
   document.getElementById("choice-2").innerHTML = randomGames[1].name
