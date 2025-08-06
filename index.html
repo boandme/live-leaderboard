@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Global Video Game Leaderboard</title>
+        <link rel="stylesheet" href="leaderboard.css">
+    </head>
+    <body>
+        <h1> Global Video Game Leaderboard </h1>
+        
+        <div id = 'lboard'>
+            <h3> All Time Leaderboard </h3>
+            <ul id = 'leaderboard'>
+
+            </ul>
+        </div>
+        <button id = 'voteBtn'> Vote</button>
+        <div id = 'modal'>
+            <div id="modal-content">
+
+
+                <h2> Voting </h2>
+
+                <div class="vote-pair" data-pair="1">
+                        <button id = "choice-1" class = "vote-choice"  onclick = "selectChoice(this)"> Game A </button>
+                        <span class="vs-label">VS</span>
+                        <button id = "choice-2" class = "vote-choice" onclick = "selectChoice(this)">Game B</button>
+                    
+                </div>
+
+                <div class="vote-pair" data-pair="2">
+                        <button id = "choice-3" class = "vote-choice"  onclick = "selectChoice(this)"> Game A </button>
+                        <span class="vs-label">VS</span>
+                        <button id = "choice-4" class = "vote-choice" onclick = "selectChoice(this)">Game B</button>
+                    
+                </div>
+                <div class="vote-pair" data-pair="3">
+                        <button id = "choice-5" class = "vote-choice"  onclick = "selectChoice(this)"> Game A </button>
+                        <span class="vs-label">VS</span>
+                        <button id = "choice-6" class = "vote-choice" onclick = "selectChoice(this)">Game B</button>
+                    
+                </div>
+                <button id = 'submitVote' onclick = > Submit Votes </button>
+            </div>
+        </div>
+       
+        <script  type = "module" src = 'leaderboard.js'></script>
+    </body>
+</html>
