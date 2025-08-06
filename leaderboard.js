@@ -50,7 +50,7 @@ function selectChoice(button) {
 
 
 
-  /*get(ref(db, `totalVotes`)).then((snapshot) => {
+  get(ref(db, `totalVotes`)).then((snapshot) => {
   if (snapshot.exists()) {
     
     rankings = snapshot.val()
@@ -63,7 +63,7 @@ function selectChoice(button) {
 }).catch((error) => {
   console.error(error);
 });
-*/
+
 function updateScreen(){
   // Resolve duplication errors - complete
   // Update the voting choice buttons every time after data is retrieved - Generate random list
