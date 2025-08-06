@@ -116,28 +116,6 @@ h3 {
   border-radius: 4px;
 }
 
-/* Make vote buttons clean and clickable 
-.vote-btn {
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: transparent;
-  filter: brightness(0.8);
-  transition: transform 0.15s ease, filter 0.15s ease;
-}
-
-
-.vote-btn:hover {
-  filter: brightness(1);
-  transform: scale(1.1);
-}
-
-.vote-btn:active {
-  transform: scale(0.95);
-}
 
 */
 #modal {
@@ -251,7 +229,7 @@ body {
   text-align: center;
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: auto;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #667eea 50%, #764ba2 75%, #667eea 100%);
   background-attachment: fixed;
   background-size: 400% 400%;
