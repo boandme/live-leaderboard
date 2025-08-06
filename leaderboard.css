@@ -6,6 +6,31 @@ body {
   padding: 20px;
   text-align: center;
 }
+button {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#voteBtn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.4);
+  padding-top: 20px;
+}
+#voteBtn:hover {
+  background: linear-gradient(135deg, #7d2ae8, #3b8dff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(106, 17, 203, 0.5);
+}
+#voteBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(106, 17, 203, 0.4);
+}
 
 /* General page styling */
 h1 {
@@ -86,25 +111,63 @@ h3 {
 
 
 #modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.6); /* dim background */
+
+  /* Center modal content */
+  
+  justify-content: center;
+  align-items: center;
 }
 
-/* Modal Content/Box */
+/* Modal content box */
 #modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  background: #1e1e2f; /* dark purple-blue */
+  padding: 30px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+#modal-content h2 {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+.vote-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* space between pairs */
+}
+
+.vs-label {
+  margin: 0 15px;
+  color: #bbb;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.vote-choice {
+  flex: 1;
+  padding: 12px;
+  margin: 0 5px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
 .vote-options {
@@ -125,23 +188,18 @@ h3 {
   text-align: center;
   font-weight: bold;
 }
-.vote-choice.selected {
-  background-color: #ff6b6b;
-  color: white;
-  font-weight: bold;
-}
-
 .vote-choice:hover {
-  background: rgba(255,255,255,0.2);
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #7d2ae8, #3b8dff);
+  transform: translateY(-2px);
 }
 
 /* Selected choice */
 .vote-choice.selected {
-  background: #ff6b6b;
+  background: linear-gradient(135deg, #ff8a00, #ff2e63); /* orange-pink highlight */
   font-weight: bold;
-  color: white;
+  box-shadow: 0 0 12px rgba(255, 138, 0, 0.6);
 }
+
 
 /* Reset and base styles */
 * {

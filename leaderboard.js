@@ -63,12 +63,16 @@ function selectChoice(button) {
 
 function updateScreen(){
   // Update the voting choice buttons every time after data is retrieved - Generate random list 
-  for(let j = 0; j < 2;j++){
+  for(let j = 0; j < 6;j++){
       var val = Math.floor(Math.random()*(Object.values(rankings).length))
       val = rankings[val].name
       randomGames.push(val)
   
     }
+  // Remove the selected class from all buttons so that highlight does not show
+  document.querySelectorAll('.vote-choice').forEach(btn => {
+  btn.classList.remove('selected');
+  });
 
   
 
@@ -77,6 +81,10 @@ function updateScreen(){
   // Physically update the vote options
   document.getElementById("choice-1").innerHTML = randomGames[0]
   document.getElementById("choice-2").innerHTML = randomGames[1]
+  document.getElementById("choice-3").innerHTML = randomGames[2]
+  document.getElementById("choice-4").innerHTML = randomGames[3]
+  document.getElementById("choice-5").innerHTML = randomGames[4]
+  document.getElementById("choice-6").innerHTML = randomGames[5]
 }
 
 
@@ -142,7 +150,7 @@ var submitBtn = document.getElementById('submitVote')
 
 
 btn.onclick = function() {
-  modal.style.display = "block";
+  modal.style.display = "flex";
 }
 
 submitBtn.onclick = function() {
@@ -158,6 +166,16 @@ submitBtn.onclick = function() {
       finalVotes.push(null); 
 }
   });
+  for(let k = 0; k < finalVotes.length; k++){
+    if(finalVotes[k] != null){
+      addVote(finalVotes[k]);
+    }
+  }
+  // Reset randomGames
+  randomGames = [];
+  finalVotes = [];
+  updateScreen();
+  
 }
 
 
