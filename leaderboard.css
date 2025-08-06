@@ -229,7 +229,7 @@ body {
   text-align: center;
   position: relative;
   min-height: 100vh;
-  overflow-x: auto;
+  overflow-x: hidden;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #667eea 50%, #764ba2 75%, #667eea 100%);
   background-attachment: fixed;
   background-size: 400% 400%;
