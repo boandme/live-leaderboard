@@ -84,7 +84,7 @@ rankings = [
   {name: 'Clash Royale', votes: 1},
   {name: 'Clash of Clans', votes: 1}
 ];
-*/  
+ */ 
 var randomGames = [];
 function selectChoice(button) {
   
@@ -106,6 +106,7 @@ function selectChoice(button) {
     
       
   } 
+  
 }).catch((error) => {
   console.error(error);
 });
