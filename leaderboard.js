@@ -25,20 +25,20 @@ var db = getDatabase(app);
 var rankings = []
 
 // Use this to reset the databse //
-
+/*
 rankings = [
   {name: 'Minecraft', votes: 1},
   {name: 'Terraria', votes: 1},
   {name: 'Call of Duty', votes: 1},
   {name: 'Super Mario 64', votes: 1},
   {name: 'Geometry Dash', votes: 1},
-  {name: 'War thunder', votes: 1},
+  {name: 'War Thunder', votes: 1},
   {name: 'Valorant', votes: 1},
   {name: 'Grand Theft Auto V', votes: 1},
   {name: 'Roblox', votes: 1},
   {name: 'FC25', votes: 1},
 ]
-  
+*/  
 var randomGames = [];
 function selectChoice(button) {
   
