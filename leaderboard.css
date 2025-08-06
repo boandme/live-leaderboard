@@ -59,15 +59,33 @@ h3 {
 }
 /* Leaderboard container */
 #lboard {
-  max-width: 700px; /* wider than before */
+  max-width: 700px;
   margin: auto;
-  margin-top: 30px; /* adds some space above leaderboard */
+  margin-top: 30px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 30px; /* more padding inside */
+  padding: 30px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+  /* Scroll settings */
+  max-height: 500px; /* adjust as needed */
+  overflow-y: auto;
 }
 
+/* Optional: style the scrollbar (Chrome/Edge/Safari) */
+#lboard::-webkit-scrollbar {
+  width: 8px;
+}
+
+#lboard::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+#lboard::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border-radius: 4px;
+}
 /* Leaderboard items */
 #leaderboard li {
   background: #fff;

@@ -27,17 +27,63 @@ var rankings = []
 // Use this to reset the databse //
 /*
 rankings = [
-  {name: 'Minecraft', votes: 1},
-  {name: 'Terraria', votes: 1},
-  {name: 'Call of Duty', votes: 1},
-  {name: 'Super Mario 64', votes: 1},
-  {name: 'Geometry Dash', votes: 1},
-  {name: 'War Thunder', votes: 1},
-  {name: 'Valorant', votes: 1},
+  {name: 'The Legend of Zelda', votes: 1},
   {name: 'Grand Theft Auto V', votes: 1},
-  {name: 'Roblox', votes: 1},
+  {name: 'The Last of Us', votes: 1},
+  {name: 'Tetris', votes: 1},
+  {name: 'Resident Evil 4', votes: 1},
+  {name: 'Metal Gear Solid', votes: 1},
+  {name: 'The Witcher 3', votes: 1},
+  {name: 'Super Mario World', votes: 1},
+  {name: 'BioShock', votes: 1},
+  {name: 'Half-Life 2', votes: 1},
+  {name: 'Chrono Trigger', votes: 1},
+  {name: 'Shadow of the Colossus', votes: 1},
+  {name: 'Final Fantasy VII', votes: 1},
+  {name: 'Portal 2', votes: 1},
+  {name: 'Minecraft', votes: 1},
+  {name: 'Mass Effect 2', votes: 1},
+  {name: 'Call of Duty', votes: 1},
+  {name: 'World of Warcraft', votes: 1},
+  {name: 'GoldenEye 007', votes: 1},
+  {name: 'Dark Souls', votes: 1},
+  {name: 'Hades', votes: 1},
+  {name: 'Halo: Combat Evolved', votes: 1},
+  {name: 'Red Dead Redemption 2', votes: 1},
+  {name: 'Fallout: New Vegas', votes: 1},
+  {name: 'Elden Ring', votes: 1},
+  {name: 'Persona 5 Royal', votes: 1},
+  {name: 'Bloodborne', votes: 1},
+  {name: 'The Sims', votes: 1},
+  {name: 'X-COM: Enemy Unknown', votes: 1},
+  {name: 'Street Fighter II', votes: 1},
+  {name: 'Pokémon Red/Blue', votes: 1},
+  {name: 'Metroid Prime', votes: 1},
+  {name: 'Super Smash Bros. Ultimate', votes: 1},
+  {name: 'Monster Hunter: World', votes: 1},
+  {name: 'Assassin’s Creed II', votes: 1},
+  {name: 'Overwatch', votes: 1},
+  {name: 'Fortnite', votes: 1},
+  {name: 'Valorant', votes: 1},
+  {name: 'Apex Legends', votes: 1},
+  {name: 'Terraria', votes: 1},
+  {name: 'Stardew Valley', votes: 1},
+  {name: 'Animal Crossing', votes: 1},
+  {name: 'Among Us', votes: 1},
+  {name: 'League of Legends', votes: 1},
+  {name: 'Dota 2', votes: 1},
+  {name: 'Rocket League', votes: 1},
+  {name: 'Cuphead', votes: 1},
+  {name: 'Celeste', votes: 1},
+  {name: 'Undertale', votes: 1},
+  {name: 'Geometry Dash', votes: 1},
   {name: 'FC25', votes: 1},
-]
+  {name: 'Microsoft Flight Sim', votes: 1},
+  {name: 'Roblox', votes: 1},
+  {name: 'Madden', votes: 1},
+  {name: 'Clash Royale', votes: 1},
+  {name: 'Clash of Clans', votes: 1}
+];
 */  
 var randomGames = [];
 function selectChoice(button) {
@@ -63,6 +109,7 @@ function selectChoice(button) {
 }).catch((error) => {
   console.error(error);
 });
+
 
 function updateScreen(){
   // Resolve duplication errors - complete
