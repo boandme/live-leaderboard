@@ -6,7 +6,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase
 
         
 
-        // Your web app's Firebase configuration
+ // Your web app's Firebase configuration
 const firebaseConfig = {
 apiKey: "AIzaSyBCZUDkl_7eUs7BZ-OylpvGnKWJI4tf3Vc",
 authDomain: "vg-leaderboard-live.firebaseapp.com",
@@ -23,7 +23,10 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 var db = getDatabase(app);
 var rankings = []
-/*rankings = [
+
+// Use this to reset the databse //
+
+rankings = [
   {name: 'Minecraft', votes: 1},
   {name: 'Terraria', votes: 1},
   {name: 'Call of Duty', votes: 1},
@@ -35,7 +38,7 @@ var rankings = []
   {name: 'Roblox', votes: 1},
   {name: 'FC25', votes: 1},
 ]
-  */
+  
 var randomGames = [];
 function selectChoice(button) {
   
@@ -47,28 +50,26 @@ function selectChoice(button) {
 
 
 
-  get(ref(db, `totalVotes`)).then((snapshot) => {
+  /*get(ref(db, `totalVotes`)).then((snapshot) => {
   if (snapshot.exists()) {
-    //console.log(snapshot.val());
+    
     rankings = snapshot.val()
     createLeaderboard();
     updateScreen();
-    console.log(randomGames)
+    
     
       
   } 
 }).catch((error) => {
   console.error(error);
 });
-
+*/
 function updateScreen(){
-  // Update the voting choice buttons every time after data is retrieved - Generate random list 
-  for(let j = 0; j < 6;j++){
-      var val = Math.floor(Math.random()*(Object.values(rankings).length))
-      val = rankings[val].name
-      randomGames.push(val)
+  // Resolve duplication errors - complete
+  // Update the voting choice buttons every time after data is retrieved - Generate random list
+  randomGames = rankings.slice() 
+  randomGames.sort(() => Math.random() - 0.5); // Shuffle the array
   
-    }
   // Remove the selected class from all buttons so that highlight does not show
   document.querySelectorAll('.vote-choice').forEach(btn => {
   btn.classList.remove('selected');
@@ -78,13 +79,13 @@ function updateScreen(){
 
 
 
-  // Physically update the vote options
-  document.getElementById("choice-1").innerHTML = randomGames[0]
-  document.getElementById("choice-2").innerHTML = randomGames[1]
-  document.getElementById("choice-3").innerHTML = randomGames[2]
-  document.getElementById("choice-4").innerHTML = randomGames[3]
-  document.getElementById("choice-5").innerHTML = randomGames[4]
-  document.getElementById("choice-6").innerHTML = randomGames[5]
+  // Physically update the vote options on the HTML
+  document.getElementById("choice-1").innerHTML = randomGames[0].name
+  document.getElementById("choice-2").innerHTML = randomGames[1].name
+  document.getElementById("choice-3").innerHTML = randomGames[2].name
+  document.getElementById("choice-4").innerHTML = randomGames[3].name
+  document.getElementById("choice-5").innerHTML = randomGames[4].name
+  document.getElementById("choice-6").innerHTML = randomGames[5].name
 }
 
 
@@ -96,7 +97,7 @@ function updateScreen(){
 
 
 
-
+// Function addVote(name) - Adds a vote to the leaderboard and database being given a name
 function addVote(name){
   for (let i = 0; i < rankings.length; i++) {
   if (rankings[i].name === name) {
@@ -107,6 +108,8 @@ function addVote(name){
 }
   createLeaderboard();
 }
+
+// Displays the leaderboard in the HTML - recurring function
 function createLeaderboard(){
   rankings.sort((a, b) => b.votes - a.votes);
   var leaderboard = document.getElementById('leaderboard')
@@ -118,13 +121,6 @@ function createLeaderboard(){
     <span>${rankings[i].votes}</span> 
     
   `;
-    let btn = document.createElement("input");
-    btn.type = "image";
-    btn.src = "arrow_up.png";
-    btn.classList.add("vote-btn");
-    btn.addEventListener("click", () => addVote(rankings[i].name));
-    li.appendChild(btn);
-
     leaderboard.appendChild(li);
 }
 
@@ -139,7 +135,7 @@ function createLeaderboard(){
 
 console.clear();
 
-
+// These lines code for the creation and exit of the modal
 var modal = document.getElementById("modal");
 
 // Get the button that opens the modal
@@ -153,6 +149,7 @@ btn.onclick = function() {
   modal.style.display = "flex";
 }
 
+// Based on the votes, use the selected attribute to determien which game selected and add the votes to the leaderboard
 submitBtn.onclick = function() {
   modal.style.display = "none";
   // Code for adding the votes here
@@ -178,7 +175,7 @@ submitBtn.onclick = function() {
   
 }
 
-
+// When the close button is clicked, close the modal - has to be window 
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
