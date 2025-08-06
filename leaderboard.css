@@ -117,7 +117,7 @@ h3 {
 }
 
 
-*/
+
 #modal {
   display: none; /* hidden by default */
   position: fixed;
@@ -129,7 +129,7 @@ h3 {
   background: rgba(0, 0, 0, 0.6); /* dim background */
 
   /* Center modal content */
-  
+  display:flex;
   justify-content: center;
   align-items: center;
 }
