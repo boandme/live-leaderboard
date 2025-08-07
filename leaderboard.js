@@ -1,4 +1,4 @@
-import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+import { getDatabase, ref, set, onValue, get, update } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
  // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
@@ -150,7 +150,7 @@ function addVote(name){
   for (let i = 0; i < rankings.length; i++) {
   if (rankings[i].name === name) {
     rankings[i].votes ++;
-    set(ref(db, 'totalVotes'), rankings);
+    update(ref(db, `totalVotes/${i}`), {votes: rankings[i].votes});
     break;
   }
 }
